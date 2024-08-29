@@ -1,0 +1,18 @@
+// Compares two boolean values for equality
+// - a: The first boolean value
+// - b: The second boolean value
+// = True if both values are the same, False otherwise
+Bool/eql
+: ∀(a: Bool)
+  ∀(b: Bool)
+  Bool
+= λ{
+  #true: λ{
+    #true: #true{}
+    #false: #false{}
+  }
+  #false: λ{
+    #true: #false{}
+    #false: #true{}
+  }
+}

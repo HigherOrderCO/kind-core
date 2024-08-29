@@ -1,0 +1,12 @@
+// Returns the first element of a list, if it exists.
+// - A: The type of elements in the list.
+// - xs: The input list.
+// = Maybe containing the first element of the list, or None if the list is empty.
+List/head
+: ∀(A: *)
+  ∀(xs: (List A))
+  (Maybe A)
+= λA λ{
+  #nil: (Maybe/none A)
+  #cons: λhead λtail (Maybe/some A head)
+}

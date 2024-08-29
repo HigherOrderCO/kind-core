@@ -1,0 +1,20 @@
+// Right-associative fold of a list.
+// - A: The type of elements in the list.
+// - B: The type of the accumulator and result.
+// - xs: The input list.
+// - f: The folding function.
+// - init: The initial value of the accumulator.
+// = The result of folding the list from right to left.
+List/foldr
+: ∀(A: *)
+  ∀(B: *)
+  ∀(xs: (List A))
+  ∀(f: ∀(x: A) ∀(acc: B) B)
+  ∀(init: B)
+  B
+= λA λB λ{
+  #nil: λf λinit
+    init
+  #cons: λhead λtail λf λinit
+    (f head (List/foldr A B tail f init))
+}

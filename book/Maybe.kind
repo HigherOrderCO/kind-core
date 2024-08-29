@@ -1,0 +1,12 @@
+// Defines the Maybe type, representing optional values
+// - A: The type of the value that may or may not be present
+// Constructors:
+// - some: Represents the presence of a value
+// - none: Represents the absence of a value
+Maybe
+: ∀(A: *)
+  *
+= λA #[]{
+  #some{ value: A } : (Maybe A)
+  #none{} : (Maybe A)
+}

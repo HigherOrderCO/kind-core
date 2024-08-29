@@ -1,0 +1,15 @@
+// Returns the first element of a Pair.
+// - A: The type of the first element.
+// - B: The type of the second element.
+// - pair: The Pair to extract the first element from.
+// = The first element of the Pair.
+Pair/fst
+: ∀(A: *)
+  ∀(B: *)
+  ∀(pair: (Pair A B))
+  A
+= λA λB λ{
+  #new: λpair.fst λpair.snd
+    pair.fst
+}
+

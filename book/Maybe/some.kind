@@ -1,0 +1,10 @@
+// Constructs a Some value, representing the presence of a value
+// - A: The type of the value
+// - value: The value to wrap in Some
+// = A Maybe value containing the given value
+Maybe/some
+: ∀(A: *)
+  ∀(value: A)
+  (Maybe A)
+= λA λvalue
+  #some{value}

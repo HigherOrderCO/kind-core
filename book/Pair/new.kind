@@ -1,0 +1,14 @@
+// Constructs a new Pair instance.
+// - A: The type of the first element.
+// - B: The type of the second element.
+// - fst: The first element of the pair.
+// - snd: The second element of the pair.
+// = A new Pair containing the given elements.
+Pair/new
+: ∀(A: *)
+  ∀(B: *)
+  ∀(fst: A)
+  ∀(snd: B)
+  (Pair A B)
+= λA λB λfst λsnd
+  #new{fst snd}

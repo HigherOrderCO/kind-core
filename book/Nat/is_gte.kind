@@ -1,0 +1,18 @@
+// Checks if the first number is greater than or equal to the second
+// - a: The first natural number
+// - b: The second natural number
+// = True if a is greater than or equal to b, False otherwise
+Nat/is_gte
+: ∀(a: Nat)
+  ∀(b: Nat)
+  Bool
+= λ{
+  #zero: λ{
+    #zero: #true{}
+    #succ: λb.pred #false{}
+  }
+  #succ: λa.pred λ{
+    #zero: #true{}
+    #succ: λb.pred (Nat/is_gte a.pred b.pred)
+  }
+}

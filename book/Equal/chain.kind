@@ -1,0 +1,21 @@
+// Chains two equality proofs together.
+// - A: The type of the values being compared.
+// - a: The first value.
+// - b: The second value.
+// - c: The third value.
+// - e1: Proof that `a` equals `b`.
+// - e2: Proof that `b` equals `c`.
+// = A proof that `a` equals `c`.
+Equal/chain
+: ∀(A: *)
+  ∀(a: A)
+  ∀(b: A)
+  ∀(c: A)
+  ∀(e1: (Equal A a b))
+  ∀(e2: (Equal A b c))
+  (Equal A a c)
+= λA λa λb λc λ{
+  #refl: λ{
+    #refl: #refl{}
+  }
+}

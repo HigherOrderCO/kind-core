@@ -1,0 +1,18 @@
+// Checks if the first number is less than the second
+// - a: The first natural number
+// - b: The second natural number
+// = True if a is less than b, False otherwise
+Nat/is_ltn
+: ∀(a: Nat)
+  ∀(b: Nat)
+  Bool
+= λ{
+  #zero: λ{
+    #zero: #false{}
+    #succ: λb.pred #true{}
+  }
+  #succ: λa.pred λ{
+    #zero: #false{}
+    #succ: λb.pred (Nat/is_ltn a.pred b.pred)
+  }
+}

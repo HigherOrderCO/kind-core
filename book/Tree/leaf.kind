@@ -1,0 +1,8 @@
+// Creates a leaf node (empty tree)
+// - A: The type of values stored in the tree
+// = An empty tree (leaf node)
+Tree/leaf
+: ∀(A: *)
+  (Tree A)
+= λA
+  #leaf{}

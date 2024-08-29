@@ -1,0 +1,12 @@
+// Calculates the length of a list and returns it along with the original list.
+// - A: The type of elements in the list.
+// - xs: The input list.
+// = A pair containing the number of elements in the list and the original list.
+List/length/got
+: ∀(A: *)
+  ∀(xs: (List A))
+  (Pair Nat (List A))
+= λA λxs
+  let length = (List/length A xs)
+  (Pair/new Nat (List A) length xs)
+

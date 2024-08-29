@@ -1,0 +1,10 @@
+// Checks if a natural number is zero
+// - n: The natural number to check
+// = True if the number is zero, False otherwise
+Nat/is_zero
+: ∀(n: Nat)
+  Bool
+= λ{
+  #zero: #true{}
+  #succ: λn.pred #false{}
+}

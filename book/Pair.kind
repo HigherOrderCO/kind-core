@@ -1,0 +1,12 @@
+// TASK: create new
+// Defines a generic Pair datatype.
+// - A: The type of the first element.
+// - B: The type of the second element.
+Pair
+: ∀(A: *)
+  ∀(B: *)
+  *
+= λA λB #[]{
+  #new{ fst:A snd:B } : (Pair A B)
+}
+

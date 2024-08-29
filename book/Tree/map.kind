@@ -1,0 +1,21 @@
+// Applies a function to each value in the tree
+// - A: The type of values in the input tree
+// - B: The type of values in the output tree
+// - tree: The input tree
+// - f: The function to apply to each value
+// = A new tree with the function applied to each value
+Tree/map
+: ∀(A: *)
+  ∀(B: *)
+  ∀(tree: (Tree A))
+  ∀(f: ∀(x: A) B)
+  (Tree B)
+= λA λB 
+  λ{
+    #leaf: λf #leaf{}
+    #node: λvalue λleft λright λf
+      let new_value = (f value)
+      let new_left = (Tree/map A B left f)
+      let new_right = (Tree/map A B right f)
+      #node{new_value new_left new_right}
+  }
