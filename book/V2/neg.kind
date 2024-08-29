@@ -1,0 +1,10 @@
+// Negates a 2D vector by inverting its x and y components.
+// - v: The input 2D vector to be negated.
+// = A new V2 vector with negated x and y components.
+V2/neg
+: ∀(v: V2)
+  V2
+= λ{
+  #new: λv.x λv.y
+    (V2/new (- 0 v.x) (- 0 v.y))
+}
