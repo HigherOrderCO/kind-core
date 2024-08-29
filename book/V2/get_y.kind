@@ -1,0 +1,10 @@
+// Gets the y-coordinate of a 2D vector.
+// - v: The 2D vector.
+// = The y-coordinate of the vector.
+V2/get_y
+: ∀(v: V2)
+  U32
+= λ{
+  #new: λv.x λv.y
+    v.y
+}

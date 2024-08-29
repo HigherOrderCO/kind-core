@@ -1,0 +1,14 @@
+// Subtracts two V2 vectors.
+// - a: The first V2 vector.
+// - b: The second V2 vector.
+// = A new V2 vector representing the subtraction of `a` - `b`.
+V2/sub
+: ∀(a: V2)
+  ∀(b: V2)
+  V2
+= λ{
+  #new: λa.x λa.y λ{
+    #new: λb.x λb.y
+      (V2/new (- a.x b.x) (- a.y b.y))
+  }
+}
