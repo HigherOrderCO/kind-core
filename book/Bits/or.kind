@@ -1,0 +1,18 @@
+// Performs bitwise OR operation on two Bits sequences.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = The result of bitwise OR operation.
+Bits/or : ∀(a: Bits) ∀(b: Bits) Bits
+= λ{
+  #e: λb #e{}
+  #i: λa.pred λ{
+    #e: #e{}
+    #i: λb.pred #i{(Bits/or a.pred b.pred)}
+    #o: λb.pred #o{(Bits/or a.pred b.pred)}
+  }
+  #o: λa.pred λ{
+    #e: #e{}
+    #i: λb.pred #o{(Bits/or a.pred b.pred)}
+    #o: λb.pred #o{(Bits/or a.pred b.pred)}
+  }
+}

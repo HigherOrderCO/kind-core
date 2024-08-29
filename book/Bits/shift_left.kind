@@ -1,0 +1,7 @@
+// Shifts a Bits sequence to the left by one position
+Bits/shift_left : ∀(a: Bits) Bits
+= λ{
+  #e: #e{}
+  #i: λa.pred #i{a.pred}
+  #o: λa.pred #o{a.pred}
+}

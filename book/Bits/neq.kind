@@ -1,0 +1,10 @@
+// Checks if two Bits sequences are not equal.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = True if 'a' and 'b' are different, False if they are identical.
+Bits/neq
+: ∀(a: Bits)
+  ∀(b: Bits)
+  Bool
+= λa λb
+  (Bool/not (Bits/eq a b))

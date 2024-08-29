@@ -1,0 +1,12 @@
+// Defines the Bits type, representing a sequence of binary digits.
+// Constructors:
+// - e: Represents the empty sequence (end of bits).
+// - i: Represents a 0 bit, followed by more bits.
+// - o: Represents a 1 bit, followed by more bits.
+Bits : * = #[]{
+  #e{} : Bits
+  #o{ pred: Bits } : Bits
+  #i{ pred: Bits } : Bits
+}
+
+

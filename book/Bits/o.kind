@@ -1,0 +1,6 @@
+// Represents a 0 bit in the Bits type
+Bits/o
+: ∀(pred: Bits)
+  Bits
+= λpred
+  #o{pred}

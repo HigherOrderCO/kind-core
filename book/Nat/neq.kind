@@ -1,0 +1,10 @@
+// Checks if two nats are not equal.
+// - a: The 1st nat.
+// - b: The 2nd nat.
+// = True if `a` and `b` are not equal, False otherwise.
+Nat/neq
+: ∀(a: Nat)
+  ∀(b: Nat)
+  Bool
+= λa λb
+  (Bool/not (Nat/equal a b))

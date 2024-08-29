@@ -1,0 +1,10 @@
+// Checks if two U32 values are equal.
+// - a: The first U32 value.
+// - b: The second U32 value.
+// = True if `a` is equal to `b`, False otherwise.
+U32/eq
+: ∀(a: U32)
+  ∀(b: U32)
+  Bool
+= λa λb
+  (U32/to_bool (U32/eql a b))

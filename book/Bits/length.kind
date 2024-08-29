@@ -1,0 +1,9 @@
+// Calculates the length of a Bits sequence.
+// - a: The Bits sequence.
+// = The number of bits in the sequence.
+Bits/length : ∀(a: Bits) Nat
+= λ{
+  #e: #z{}
+  #i: λa.pred #s{(Bits/length a.pred)}
+  #o: λa.pred #s{(Bits/length a.pred)}
+}

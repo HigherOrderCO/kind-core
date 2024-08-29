@@ -1,0 +1,25 @@
+// Checks if the first Bits sequence is strictly less than the second.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = True if 'a' is strictly less than 'b', False otherwise.
+Bits/lt
+: ∀(a: Bits)
+  ∀(b: Bits)
+  Bool
+= λ{
+  #e: λ{
+    #e: #f{}
+    #i: λb.pred #t{}
+    #o: λb.pred #t{}
+  }
+  #i: λa.pred λ{
+    #e: #f{}
+    #i: λb.pred (Bits/lt a.pred b.pred)
+    #o: λb.pred #t{}
+  }
+  #o: λa.pred λ{
+    #e: #f{}
+    #i: λb.pred #f{}
+    #o: λb.pred (Bits/lt a.pred b.pred)
+  }
+}

@@ -1,0 +1,25 @@
+// Checks if two Bits sequences are equal.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = True if 'a' and 'b' are identical, False otherwise.
+Bits/eq
+: ∀(a: Bits)
+  ∀(b: Bits)
+  Bool
+= λ{
+  #e: λ{
+    #e: #t{}
+    #i: λb.pred #f{}
+    #o: λb.pred #f{}
+  }
+  #i: λa.pred λ{
+    #e: #f{}
+    #i: λb.pred (Bits/eq a.pred b.pred)
+    #o: λb.pred #f{}
+  }
+  #o: λa.pred λ{
+    #e: #f{}
+    #i: λb.pred #f{}
+    #o: λb.pred (Bits/eq a.pred b.pred)
+  }
+}

@@ -1,0 +1,8 @@
+// Subtracts the second Bits sequence from the first.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = The result of bitwise subtraction.
+Bits/sub : ∀(a: Bits) ∀(b: Bits) Bits
+= λa λb
+  let borrow = Bits/i(Bits/e)
+  (Bits/sub/go a b borrow)

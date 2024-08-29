@@ -1,0 +1,9 @@
+// Performs logical NOT operation on a Bits sequence.
+// - a: The Bits sequence to negate.
+// = The result of bitwise NOT operation.
+Bits/not : ∀(a: Bits) Bits
+= λ{
+  #e: #e{}
+  #i: λa.pred #o{(Bits/not a.pred)}
+  #o: λa.pred #i{(Bits/not a.pred)}
+}

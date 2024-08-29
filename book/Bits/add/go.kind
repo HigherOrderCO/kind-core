@@ -1,0 +1,27 @@
+//Auxiliaryfunction for Bits/add that handles carry
+Bits/add/go : ∀(a: Bits) ∀(b: Bits) ∀(carry: Bits) Bits
+= λ{
+  #e: λb λcarry b
+  #i: λa.pred λ{
+    #e: λcarry (Bits/add/go a.pred #i{#e{}} carry)
+    #i: λb.pred λ{
+      #i: λc.pred #i{(Bits/add/go a.pred b.pred c.pred)}
+      #o: λc.pred #o{(Bits/add/go a.pred b.pred c.pred)}
+    }
+    #o: λb.pred λ{
+      #i: λc.pred #o{(Bits/add/go a.pred b.pred c.pred)}
+      #o: λc.pred #i{(Bits/add/go a.pred b.pred #o{#e{}})}
+    }
+  }
+  #o: λa.pred λ{
+    #e: λcarry (Bits/add/go a.pred #o{#e{}} carry)
+    #i: λb.pred λ{
+      #i: λc.pred #o{(Bits/add/go a.pred b.pred c.pred)}
+      #o: λc.pred #i{(Bits/add/go a.pred b.pred #o{#e{}})}
+    }
+    #o: λb.pred λ{
+      #i: λc.pred #i{(Bits/add/go a.pred b.pred #o{#e{}})}
+      #o: λc.pred #o{(Bits/add/go a.pred b.pred #o{#e{}})}
+    }
+  }
+}
