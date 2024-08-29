@@ -7,12 +7,12 @@ Nat/is_ltn
   ∀(b: Nat)
   Bool
 = λ{
-  #zero: λ{
-    #zero: #false{}
-    #succ: λb.pred #true{}
+  #z: λ{
+    #z: #f{}
+    #s: λb.pred #t{}
   }
-  #succ: λa.pred λ{
-    #zero: #false{}
-    #succ: λb.pred (Nat/is_ltn a.pred b.pred)
+  #s: λa.pred λ{
+    #z: #f{}
+    #s: λb.pred (Nat/is_ltn a.pred b.pred)
   }
 }

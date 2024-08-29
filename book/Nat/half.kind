@@ -5,9 +5,9 @@ Nat/half
 : ∀(n: Nat)
   Nat
 = λ{
-  #zero: #zero{}
-  #succ: λ{
-    #zero: #zero{}
-    #succ: λn.pred.pred #succ{(Nat/half n.pred.pred)}
+  #z: #z{}
+  #s: λ{
+    #z: #z{}
+    #s: λn.pred.pred #s{(Nat/half n.pred.pred)}
   }
 }

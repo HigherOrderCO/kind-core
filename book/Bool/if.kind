@@ -11,6 +11,6 @@ Bool/if
   ∀(else: A)
   A
 = λA λ{
-  #true: λthen λelse then
-  #false: λthen λelse else
+  #t: λthen λelse then
+  #f: λthen λelse else
 }

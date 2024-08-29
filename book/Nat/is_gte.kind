@@ -7,12 +7,12 @@ Nat/is_gte
   ∀(b: Nat)
   Bool
 = λ{
-  #zero: λ{
-    #zero: #true{}
-    #succ: λb.pred #false{}
+  #z: λ{
+    #z: #t{}
+    #s: λb.pred #f{}
   }
-  #succ: λa.pred λ{
-    #zero: #true{}
-    #succ: λb.pred (Nat/is_gte a.pred b.pred)
+  #s: λa.pred λ{
+    #z: #t{}
+    #s: λb.pred (Nat/is_gte a.pred b.pred)
   }
 }

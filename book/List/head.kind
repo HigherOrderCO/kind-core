@@ -8,5 +8,5 @@ List/head
   (Maybe A)
 = λA λ{
   #nil: (Maybe/none A)
-  #cons: λhead λtail (Maybe/some A head)
+  #con: λhead λtail (Maybe/some A head)
 }

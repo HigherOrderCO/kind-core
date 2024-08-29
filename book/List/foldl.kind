@@ -15,7 +15,7 @@ List/foldl
 = λA λB λ{
   #nil: λf λinit
     init
-  #cons: λhead λtail λf λinit
+  #con: λhead λtail λf λinit
     let acc = (f init head)
     (List/foldl A B tail f acc)
 }

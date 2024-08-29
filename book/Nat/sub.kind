@@ -7,9 +7,9 @@ Nat/sub
   ∀(b: Nat)
   Nat
 = λ{
-  #zero: λb #zero{}
-  #succ: λa.pred λ{
-    #zero: #succ{a.pred}
-    #succ: λb.pred (Nat/sub a.pred b.pred)
+  #z: λb #z{}
+  #s: λa.pred λ{
+    #z: #s{a.pred}
+    #s: λb.pred (Nat/sub a.pred b.pred)
   }
 }

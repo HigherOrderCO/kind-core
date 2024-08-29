@@ -15,6 +15,6 @@ List/foldr
 = λA λB λ{
   #nil: λf λinit
     init
-  #cons: λhead λtail λf λinit
+  #con: λhead λtail λf λinit
     (f head (List/foldr A B tail f init))
 }

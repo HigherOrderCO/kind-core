@@ -5,6 +5,6 @@ Nat/is_zero
 : ∀(n: Nat)
   Bool
 = λ{
-  #zero: #true{}
-  #succ: λn.pred #false{}
+  #z: #t{}
+  #s: λn.pred #f{}
 }

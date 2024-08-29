@@ -8,5 +8,5 @@ List/tail
   (List A)
 = λA λ{
   #nil: (List/nil A)
-  #cons: λhead λtail tail
+  #con: λhead λtail tail
 }

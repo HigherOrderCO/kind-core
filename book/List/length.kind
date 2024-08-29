@@ -8,7 +8,7 @@ List/length
   Nat
 = λA λ{
   #nil: 
-    Nat/zero
-  #cons: λhead λtail
-    (Nat/succ (List/length A tail))
+    #z{}
+  #con: λhead λtail
+    #s{(List/length A tail)}
 }

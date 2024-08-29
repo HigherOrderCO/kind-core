@@ -7,9 +7,9 @@ Nat/is_lte
   ∀(b: Nat)
   Bool
 = λ{
-  #zero: λb #true{}
-  #succ: λa.pred λ{
-    #zero: #false{}
-    #succ: λb.pred (Nat/is_lte a.pred b.pred)
+  #z: λb #t{}
+  #s: λa.pred λ{
+    #z: #f{}
+    #s: λb.pred (Nat/is_lte a.pred b.pred)
   }
 }

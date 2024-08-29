@@ -7,9 +7,9 @@ Nat/is_gtn
   ∀(b: Nat)
   Bool
 = λ{
-  #zero: λb #false{}
-  #succ: λa.pred λ{
-    #zero: #true{}
-    #succ: λb.pred (Nat/is_gtn a.pred b.pred)
+  #z: λb #f{}
+  #s: λa.pred λ{
+    #z: #t{}
+    #s: λb.pred (Nat/is_gtn a.pred b.pred)
   }
 }

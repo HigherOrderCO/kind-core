@@ -7,12 +7,8 @@ Bool/eql
   ∀(b: Bool)
   Bool
 = λ{
-  #true: λ{
-    #true: #true{}
-    #false: #false{}
-  }
-  #false: λ{
-    #true: #false{}
-    #false: #true{}
-  }
+  #t: λb 
+		b
+  #f: λb 
+		(Bool/not b)
 }
