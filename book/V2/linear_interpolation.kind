@@ -1,0 +1,19 @@
+// Performs linear interpolation between two V2 vectors.
+// - a: The starting V2 vector.
+// - b: The ending V2 vector.
+// - t: The interpolation parameter (0 <= t <= 1).
+// = A new V2 vector representing the interpolated point between `a` and `b`.
+V2/linear_interpolation
+: ∀(a: V2)
+  ∀(b: V2)
+  ∀(t: U32)
+  V2
+= λ{
+  #new: λa.x λa.y λ{
+    #new: λb.x λb.y λt
+      let interpol_x = (+ a.x (* t (-b.x a.x)))
+      let interpol_y = (+ a.y (* t (-b.y a.y)))
+      (V2/new interpol_x interpol_y)     
+  }
+}
+
