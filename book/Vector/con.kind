@@ -1,0 +1,19 @@
+// Adds an element to the front of a vector
+// - A: The type of elements in the vector
+// - len: The length of the tail vector
+// - head: The element to add to the front
+// - tail: The existing vector
+// = A new vector with `head` as its first element, followed by `tail`
+
+Vector/con 
+: ∀(A: *)
+	∀(len: Nat)
+	∀(head: A)
+	∀(tail: (Vector A len))
+ (Vector A #s{len})
+= λA λlen λhead λtail ~λP λnil λcon (con len head tail)
+
+// The ~ (self-inst) operator is used here to consume the self type of Vector.
+// It allows us to directly access the eliminators (nil and con) of the Vector type,
+// which are needed to construct the new vector. This is necessary because Vector
+// is defined as a self-encoded datatype, and ~ provides a way to "open" this encoding.

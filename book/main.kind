@@ -1,3 +1,12 @@
+// A simple function to demonstrate the use of Kind
+
 main
-: Nat
-= foo
+: (Vector U32 #s{#s{#s{#z{}}}})
+= 
+	 let v0 = (Vector/nil U32)
+	 let v1 = (Vector/con U32 #z{} 1 v0)
+	 let v2 = (Vector/con U32 #s{#z{}} 2 v1)
+	 let v3 = (Vector/con U32 #s{#s{#z{}}} 2 v2)
+	 v3
+	 
+

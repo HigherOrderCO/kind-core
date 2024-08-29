@@ -1,0 +1,20 @@
+// Defines a vector (length-indexed list) using self-types
+// - A: The type of elements in the vector
+// - len: The length of the vector
+// This definition uses a self-type to encode the inductive structure,
+// allowing for a Church-encoded representation of the vector.
+// The self-type provides a way to refer to the vector type itself
+// within its own definition, enabling recursive structures.
+// The constructors are implicitly defined through the eliminator:
+// - nil: Represents an empty vector (when len = 0)
+// - cons: Adds an element to the front of a vector (for any len > 0)
+Vector
+: ∀(A: *) 
+	∀(len: Nat)
+	*
+= λA λlen 
+	$(self: (Vector A len)) 
+	∀(P: ∀(l: Nat) ∀(x: (Vector A l)) *)
+  ∀(nil: (P #z{} (Vector/nil A)))
+  ∀(con: ∀(l: Nat) ∀(head: A) ∀(tail: (Vector A l)) (P #s{l} (Vector/con A l head tail)))
+  (P len self)
