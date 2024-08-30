@@ -1,0 +1,12 @@
+// Checks if a map is a leaf (empty)
+// - A: The type of values stored in the map
+// - map: The input map
+// = True if the map is a leaf, False otherwise
+Map/is_leaf
+: ∀(A: *)
+  ∀(map: (Map A))
+  Bool
+= λA λ{
+  #leaf: #true{}
+  #node: λvalue λleft λright #false{}
+}

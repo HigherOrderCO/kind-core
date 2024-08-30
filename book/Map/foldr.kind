@@ -1,0 +1,22 @@
+// Right-associative fold of a map
+// - A: The type of values in the map
+// - B: The type of the accumulator and result
+// - map: The input map
+// - f: The folding function
+// - init: The initial value of the accumulator
+// = The result of folding the map from right to left
+Map/foldr
+: ∀(A: *)
+  ∀(B: *)
+  ∀(map: (Map A))
+  ∀(f: ∀(x: A) ∀(acc: B) B)
+  ∀(init: B)
+  B
+= λA λB λ{
+  #leaf: λf λinit
+    init
+  #node: λvalue λleft λright λf λinit
+    let acc1 = (Map/foldr A B right f init)
+    let acc2 = (f value acc1)
+    (Map/foldr A B left f acc2)
+}

@@ -1,0 +1,11 @@
+// Calculates the sum of all values in the (Map U32).
+// - map: The Map to sum.
+// = The sum of all values in the Map.
+Map/sum
+: ∀(map: (Map U32))
+  U32
+= λ{
+  #leaf: 0
+  #node: λvalue λleft λright
+    (+ value (+ (Map/sum left) (Map/sum right)))
+}

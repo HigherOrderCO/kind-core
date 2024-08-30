@@ -1,0 +1,14 @@
+// Creates a map node with a value and left and right subtrees
+// - A: The type of values stored in the map
+// - value: The value stored in this node
+// - left: The left subtree
+// - right: The right subtree
+// = A new map node
+Map/node
+: ∀(A: *)
+  ∀(value: A)
+  ∀(left: (Map A))
+  ∀(right: (Map A))
+  (Map A)
+= λA λvalue λleft λright
+  #node{value left right}

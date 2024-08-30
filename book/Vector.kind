@@ -10,11 +10,11 @@
 // - cons: Adds an element to the front of a vector (for any len > 0)
 Vector
 : ∀(A: *) 
-	∀(len: Nat)
-	*
+  ∀(len: Nat)
+  *
 = λA λlen 
-	$(self: (Vector A len)) 
-	∀(P: ∀(l: Nat) ∀(x: (Vector A l)) *)
+  $(self: (Vector A len)) 
+  ∀(P: ∀(l: Nat) ∀(x: (Vector A l)) *)
   ∀(nil: (P #z{} (Vector/nil A)))
   ∀(con: ∀(l: Nat) ∀(head: A) ∀(tail: (Vector A l)) (P #s{l} (Vector/con A l head tail)))
   (P len self)

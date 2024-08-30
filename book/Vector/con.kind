@@ -7,9 +7,9 @@
 
 Vector/con 
 : ∀(A: *)
-	∀(len: Nat)
-	∀(head: A)
-	∀(tail: (Vector A len))
+  ∀(len: Nat)
+  ∀(head: A)
+  ∀(tail: (Vector A len))
  (Vector A #s{len})
 = λA λlen λhead λtail ~λP λnil λcon (con len head tail)
 

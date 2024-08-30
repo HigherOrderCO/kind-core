@@ -1,0 +1,17 @@
+// Conditional expression for U32 values
+// - A: The type of the result
+// - cond: The condition to evaluate
+// - then: The value to return if the condition is true
+// - else: The value to return if the condition is false
+// = The 'then' value if 'cond' is true, otherwise the 'else' value
+
+U32/if
+: ∀(A: *)
+  ∀(cond: U32)
+  ∀(then: A)
+  ∀(else: A)
+  A
+= λA λ{
+  0: λthen λelse else
+  _: λcond.pred λthen λelse then
+}

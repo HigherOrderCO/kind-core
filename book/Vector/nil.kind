@@ -6,7 +6,7 @@ Vector/nil
 : ∀(A: *) 
   (Vector A #z{})
 = λA ~λP λnil λcon 
-	nil
+  nil
 
 // The ~ (self-inst) operator is used here to instantiate the self-type of the Vector.
 // It allows us to consume the self-type defined in the Vector datatype,

@@ -1,0 +1,13 @@
+// Gets the value of a map node
+// - A: The type of values stored in the map
+// - map: The input map
+// = The value of the node, or None if the map is a leaf
+Map/value
+: ∀(A: *)
+  ∀(map: (Map A))
+  (Maybe A)
+= λA λ{
+  #leaf: (Maybe/none A)
+  #node: λvalue λleft λright
+    (Maybe/some A value)
+}
