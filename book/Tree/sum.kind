@@ -1,0 +1,12 @@
+// Calculates the sum of all values in a binary tree of U32.
+// - tree: The input tree of U32 values.
+// = The sum of all values in the tree.
+Tree/sum
+: ∀(tree: (Tree U32))
+  U32
+= λ{
+  #node: λleft λright
+    (+ (Tree/sum left) (Tree/sum right))
+  #leaf: λvalue
+    value
+}

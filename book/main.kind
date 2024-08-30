@@ -1,12 +1,12 @@
 // A simple function to demonstrate the use of Kind
 
 main
-: (Vector U32 #s{#s{#s{#z{}}}})
+: (Map (Maybe U32))
 = 
-	 let v0 = (Vector/nil U32)
-	 let v1 = (Vector/con U32 #z{} 1 v0)
-	 let v2 = (Vector/con U32 #s{#z{}} 2 v1)
-	 let v3 = (Vector/con U32 #s{#s{#z{}}} 2 v2)
-	 v3
-	 
+	let leaf = (Map/leaf (Maybe U32))
+	let zero = (Map/set U32 leaf 0 0)
+	let um = (Map/set U32 zero 1 10)
+	let dois = (Map/set U32 um 2 20)
 
+	dois
+	

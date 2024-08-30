@@ -15,14 +15,13 @@ Map/set
   #leaf: λ{
     0: λvalue 
       (Map/node (Maybe A) (Maybe/some A value) (Map/leaf (Maybe A)) (Map/leaf (Maybe A)))
-    _: λkeys.pred λvalue
-      let new_key = (/ keys.pred 2)
-      let new_map =  (Map/set (Maybe A) (Map/leaf (Maybe A)) new_key value)
-      (U32/if
-        (Map (Maybe A))
-        (% keys.pred 2)
-        (Map/node (Maybe A) (Maybe/none A) (Map/leaf (Maybe A)) new_map)
-        (Map/node (Maybe A) (Maybe/none A) new_map (Map/leaf (Maybe A))))
+    _: λkeys.pred λvalue 
+      let new_map = (Map/set A (Map/leaf (Maybe A)) (/ keys.pred 2) value)
+      (U32/if 
+				(Map (Maybe A)) 
+				(% keys.pred 2) 
+				(Map/node (Maybe A) (Maybe/none A) new_map (Map/leaf (Maybe A)))
+				(Map/node (Maybe A) (Maybe/none A) (Map/leaf (Maybe A)) new_map))
   }
   #node: λnode.value λnode.left λnode.right λ{
     0: λvalue 
@@ -36,5 +35,5 @@ Map/set
         (% keys.pred 2)
         (Map/node (Maybe A) node.value node.left new_right)
         (Map/node (Maybe A) node.value new_left node.right))
-    }
+  }
 }

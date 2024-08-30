@@ -1,14 +1,12 @@
-// Creates a tree node with a value and left and right subtrees
-// - A: The type of values stored in the tree
-// - value: The value stored in this node
-// - left: The left subtree
-// - right: The right subtree
-// = A new tree node
+// Constructs an internal node of a binary tree.
+// - A: The type of values stored in the tree.
+// - left: The left subtree.
+// - right: The right subtree.
+// = A new tree node with the given left and right subtrees.
 Tree/node
 : ∀(A: *)
-  ∀(value: A)
   ∀(left: (Tree A))
   ∀(right: (Tree A))
   (Tree A)
-= λA λvalue λleft λright
-  #node{value left right}
+= λA λleft λright
+  #node{left right}

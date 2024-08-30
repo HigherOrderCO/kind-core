@@ -7,6 +7,6 @@ Map/is_leaf
   ∀(map: (Map A))
   Bool
 = λA λ{
-  #leaf: #true{}
-  #node: λvalue λleft λright #false{}
+  #leaf: #t{}
+  #node: λvalue λleft λright #f{}
 }
