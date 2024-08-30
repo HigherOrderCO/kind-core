@@ -1,0 +1,13 @@
+// Calculates the number of key-value pairs in the Map.
+// - A: The type of values stored in the Map.
+// - map: The Map to count.
+// = The number of key-value pairs in the Map.
+Map/length
+: ∀(A: *)
+  ∀(map: (Map A))
+  U32
+= λA λ{
+  #leaf: 0
+  #node: λvalue λleft λright
+    (+ 1 (+ (Map/length A left) (Map/length A right)))
+}

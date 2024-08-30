@@ -1,0 +1,14 @@
+// Constructs an empty vector
+// - A: The type of elements in the vector
+// = An empty vector of type `(Vector A #z{})`
+
+Vector/nil 
+: ∀(A: *) 
+  (Vector A #z{})
+= λA ~λP λnil λcon 
+  nil
+
+// The ~ (self-inst) operator is used here to instantiate the self-type of the Vector.
+// It allows us to consume the self-type defined in the Vector datatype,
+// which is necessary to properly construct and manipulate vectors.
+// Without it, we wouldn't be able to access the nil and cons cases of the vector.

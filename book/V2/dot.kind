@@ -1,0 +1,14 @@
+// Computes the dot product of two V2 vectors
+// - a: The first V2 vector
+// - b: The second V2 vector
+// = The dot product of `a` and `b` as a U48
+V2/dot
+: ∀(a: V2)
+  ∀(b: V2)
+  U32
+= λ{
+  #new: λa.x λa.y λ{
+    #new: λb.x λb.y
+      (+ (* a.x b.x) (* a.y b.y))
+  }
+}

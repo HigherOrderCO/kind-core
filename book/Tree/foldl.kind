@@ -1,0 +1,21 @@
+// Left-associative fold of a binary tree.
+// - A: The type of values stored in the tree.
+// - B: The type of the accumulator and result.
+// - tree: The input tree.
+// - f: The folding function.
+// - init: The initial value of the accumulator.
+// = The result of folding the tree from left to right.
+Tree/foldl
+: ∀(A: *)
+  ∀(B: *)
+  ∀(tree: (Tree A))
+  ∀(f: ∀(acc: B) ∀(x: A) B)
+  ∀(init: B)
+  B
+= λA λB λ{
+  #node: λleft λright λf λinit
+    let acc1 = (Tree/foldl A B left f init)
+    (Tree/foldl A B right f acc1)
+  #leaf: λvalue λf λinit
+    (f init value)
+}

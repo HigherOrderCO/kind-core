@@ -1,0 +1,39 @@
+// Sets a value in the Map for a given key.
+// - A: The type of values stored in the Map.
+// - map: The Map to update.
+// - key: The key to set.
+// - value: The value to set for the given key.
+// = A new Map with the updated key-value pair.
+
+Map/set
+: ∀(A: *)
+  ∀(map: (Map (Maybe A)))
+  ∀(key: U32)
+  ∀(value: A)
+  (Map (Maybe A))
+= λA λ{
+  #leaf: λ{
+    0: λvalue 
+      (Map/node (Maybe A) (Maybe/some A value) (Map/leaf (Maybe A)) (Map/leaf (Maybe A)))
+    _: λkeys.pred λvalue 
+      let new_map = (Map/set A (Map/leaf (Maybe A)) (/ keys.pred 2) value)
+      (U32/if 
+				(Map (Maybe A)) 
+				(% keys.pred 2) 
+				(Map/node (Maybe A) (Maybe/none A) new_map (Map/leaf (Maybe A)))
+				(Map/node (Maybe A) (Maybe/none A) (Map/leaf (Maybe A)) new_map))
+  }
+  #node: λnode.value λnode.left λnode.right λ{
+    0: λvalue 
+     (Map/node (Maybe A) (Maybe/some A value) node.left node.right)
+    _: λkeys.pred λvalue 
+      let new_key = (/ keys.pred 2)
+      let new_left = (Map/set A node.left new_key value)
+      let new_right = (Map/set A node.right new_key value)
+      (U32/if
+        (Map (Maybe A))
+        (% keys.pred 2)
+        (Map/node (Maybe A) node.value node.left new_right)
+        (Map/node (Maybe A) node.value new_left node.right))
+  }
+}

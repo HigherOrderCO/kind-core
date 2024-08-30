@@ -1,0 +1,8 @@
+// Adds two Bits sequences.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = The result of bitwise addition.
+Bits/add : ∀(a: Bits) ∀(b: Bits) Bits
+= λa λb
+  let carry =  Bits/i(Bits/e)
+  (Bits/add/go a b carry)

@@ -1,0 +1,10 @@
+// Constructs a leaf node of a binary tree.
+// - A: The type of values stored in the tree.
+// - value: The value to store in the leaf.
+// = A new leaf node with the given value.
+Tree/leaf
+: ∀(A: *)
+  ∀(value: A)
+  (Tree A)
+= λA λvalue
+  #leaf{value}

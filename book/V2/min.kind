@@ -1,0 +1,10 @@
+// Returns the minimum element (x, y) of a vector.
+// - a: The vector.
+// = The min element of the vector.
+V2/min
+: ∀(v: V2)
+  U32
+= λ{
+  #new: λv.x λv.y
+    (U32/min v.x v.y)
+}

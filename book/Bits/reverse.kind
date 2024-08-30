@@ -1,0 +1,5 @@
+// Reverses a Bits sequence.
+// - a: The Bits sequence to reverse.
+// = The reversed Bits sequence.
+Bits/reverse : ∀(a: Bits) Bits
+= λa (Bits/reverse/go a #e{})

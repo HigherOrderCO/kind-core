@@ -1,0 +1,15 @@
+// Subtracts the second number from the first
+// - a: The number to subtract from
+// - b: The number to subtract
+// = The result of a - b, or zero if b > a
+Nat/sub
+: ∀(a: Nat)
+  ∀(b: Nat)
+  Nat
+= λ{
+  #z: λb #z{}
+  #s: λa.pred λ{
+    #z: #s{a.pred}
+    #s: λb.pred (Nat/sub a.pred b.pred)
+  }
+}

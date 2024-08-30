@@ -1,0 +1,13 @@
+// Calculates half of a natural number
+// - n: The natural number to halve
+// = The greatest natural number not exceeding half of n
+Nat/half
+: ∀(n: Nat)
+  Nat
+= λ{
+  #z: #z{}
+  #s: λ{
+    #z: #z{}
+    #s: λn.pred.pred #s{(Nat/half n.pred.pred)}
+  }
+}

@@ -1,0 +1,16 @@
+// Inverts the tree, swapping left and right subtrees at every node.
+// - A: The type of values in the tree.
+// - tree: The tree to invert.
+// = The inverted tree.
+Tree/inverse
+: ∀(A: *)
+  ∀(tree: (Tree A))
+  (Tree A)
+= λA λ{
+    #node: λleft λright
+      (Tree/node A 
+        (Tree/inverse A right)
+        (Tree/inverse A left))
+    #leaf: λvalue 
+			(Tree/leaf A value)
+  }

@@ -1,0 +1,10 @@
+// Creates a new V2 vector.
+// - x: The x-coordinate.
+// - y: The y-coordinate.
+// = A new V2 vector with the given coordinates.
+V2/new
+: ∀(x: U32)
+  ∀(y: U32)
+  V2
+= λx λy
+  #new{x y}

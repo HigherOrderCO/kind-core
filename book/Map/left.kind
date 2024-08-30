@@ -1,0 +1,13 @@
+// Gets the left subtree of a map node
+// - A: The type of values stored in the map
+// - map: The input map
+// = The left subtree, or None if the map is a leaf
+Map/left
+: ∀(A: *)
+  ∀(map: (Map A))
+  (Maybe (Map A))
+= λA λ{
+  #leaf: (Maybe/none (Map A))
+  #node: λvalue λleft λright
+    (Maybe/some (Map A) left)
+}

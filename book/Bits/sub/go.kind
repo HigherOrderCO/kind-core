@@ -1,0 +1,27 @@
+//Auxiliaryfunction for Bits/sub that handles borrow
+Bits/sub/go : ∀(a: Bits) ∀(b: Bits) ∀(borrow: Bits) Bits
+= λ{
+  #e: λb λborrow #e{}
+  #i: λa.pred λ{
+    #e: λborrow (Bits/sub/go a.pred #i{#e{}} borrow)
+    #i: λb.pred λ{
+      #i: λc.pred #i{(Bits/sub/go a.pred b.pred c.pred)}
+      #o: λc.pred #o{(Bits/sub/go a.pred b.pred #o{#e{}})}
+    }
+    #o: λb.pred λ{
+      #i: λc.pred #o{(Bits/sub/go a.pred b.pred c.pred)}
+      #o: λc.pred #i{(Bits/sub/go a.pred b.pred #o{#e{}})}
+    }
+  }
+  #o: λa.pred λ{
+    #e: λborrow (Bits/sub/go a.pred #i{#e{}} borrow)
+    #i: λb.pred λ{
+      #i: λc.pred #o{(Bits/sub/go a.pred b.pred c.pred)}
+      #o: λc.pred #i{(Bits/sub/go a.pred b.pred c.pred)}
+    }
+    #o: λb.pred λ{
+      #i: λc.pred #i{(Bits/sub/go a.pred b.pred c.pred)}
+      #o: λc.pred #o{(Bits/sub/go a.pred b.pred #o{#e{}})}
+    }
+  }
+}

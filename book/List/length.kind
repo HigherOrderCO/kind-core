@@ -1,0 +1,14 @@
+// Calculates the length of a list.
+// - A: The type of elements in the list.
+// - xs: The input list.
+// = The number of elements in the list.
+List/length
+: ∀(A: *)
+  ∀(xs: (List A))
+  Nat
+= λA λ{
+  #nil: 
+    #z{}
+  #con: λhead λtail
+    #s{(List/length A tail)}
+}

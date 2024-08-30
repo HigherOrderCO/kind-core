@@ -1,0 +1,14 @@
+// Swaps the elements of a Pair.
+// - A: The type of the first element.
+// - B: The type of the second element.
+// - pair: The Pair to swap.
+// = A new Pair with the elements swapped.
+Pair/swap
+: ∀(A: *)
+  ∀(B: *)
+  ∀(pair: (Pair A B))
+  (Pair B A)
+= λA λB λ{
+  #new: λpair.fst λpair.snd
+    #new{pair.snd pair.fst}
+}

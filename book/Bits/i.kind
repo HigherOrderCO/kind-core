@@ -1,0 +1,6 @@
+// Represents a 1 bit in the Bits type
+Bits/i
+: ∀(pred: Bits)
+  Bits
+= λpred
+  #i{pred}

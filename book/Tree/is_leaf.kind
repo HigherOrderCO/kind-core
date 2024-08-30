@@ -1,0 +1,12 @@
+// Checks if a tree is a leaf node.
+// - A: The type of values in the tree.
+// - tree: The tree to check.
+// = True if the tree is a leaf, False otherwise.
+Tree/is_leaf
+: ∀(A: *)
+  ∀(tree: (Tree A))
+  Bool
+= λA λ{
+    #node: λleft λright #f{}
+    #leaf: λvalue #t{}
+  }

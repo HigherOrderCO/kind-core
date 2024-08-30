@@ -1,0 +1,11 @@
+// Defines a 2D vector with U32 coordinates.
+// Constructor:
+// - new: Creates a new V2 vector with given x and y coordinates.
+// Fields:
+// - x: The x-coordinate (U32)
+// - y: The y-coordinate (U32)
+V2
+: *
+= #[]{
+  #new{ x:U32 y:U32 } : V2
+}

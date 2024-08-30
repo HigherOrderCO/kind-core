@@ -1,0 +1,22 @@
+// Performs bitwise AND operation on two Bits sequences.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = The result of bitwise AND operation.
+Bits/and
+: ∀(a: Bits)
+  ∀(b: Bits)
+  Bits
+= λ{
+  #e: λb
+    #e{}
+  #i: λa.pred λ{
+    #e: #e{}
+    #i: λb.pred #i{(Bits/and a.pred b.pred)}
+    #o: λb.pred #i{(Bits/and a.pred b.pred)}
+  }
+  #o: λa.pred λ{
+    #e: #e{}
+    #i: λb.pred #i{(Bits/and a.pred b.pred)}
+    #o: λb.pred #o{(Bits/and a.pred b.pred)}
+  }
+}

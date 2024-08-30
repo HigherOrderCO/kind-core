@@ -1,0 +1,5 @@
+// Converts a Bits sequence to a natural number.
+// - a: The Bits sequence.
+// = The natural number representation of the Bits sequence.
+Bits/to_nat : ∀(a: Bits) Nat
+= λa (Bits/to_nat/go a #z{})

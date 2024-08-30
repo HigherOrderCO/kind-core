@@ -1,0 +1,21 @@
+// Applies a function to each value in the map
+// - A: The type of values in the input map
+// - B: The type of values in the output map
+// - map: The input map
+// - f: The function to apply to each value
+// = A new map with the function applied to each value
+Map/map
+: ∀(A: *)
+  ∀(B: *)
+  ∀(map: (Map A))
+  ∀(f: ∀(x: A) B)
+  (Map B)
+= λA λB λ{
+  #leaf: λf
+    (Map/leaf B)
+  #node: λvalue λleft λright λf
+    let new_value = (f value)
+    let new_left = (Map/map A B left f)
+    let new_right = (Map/map A B right f)
+    (Map/node B new_value new_left new_right)
+}

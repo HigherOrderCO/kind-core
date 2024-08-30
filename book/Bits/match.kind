@@ -1,0 +1,16 @@
+// Pattern matches on a Bits sequence.
+// - A: The return type of the match expression.
+// - a: The Bits sequence to match.
+// - e_case: The case for an empty sequence.
+// - i_case: The case for a sequence starting with 0.
+// - o_case: The case for a sequence starting with 1.
+// = The result of the pattern match.
+Bits/match : ∀(A: *) ∀(a: Bits) ∀(e_case: A) ∀(i_case: ∀(pred: Bits) A) ∀(o_case: ∀(pred: Bits) A) A
+= λA λ{
+  #e: λe_case λi_case λo_case
+    e_case
+  #i: λa.pred λe_case λi_case λo_case
+    (i_case a.pred)
+  #o: λa.pred λe_case λi_case λo_case
+    (o_case a.pred)
+}

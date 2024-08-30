@@ -1,0 +1,7 @@
+//Auxiliaryfunction for Bits/reverse
+Bits/reverse/go : ∀(a: Bits) ∀(acc: Bits) Bits
+= λ{
+  #e: λacc acc
+  #i: λa.pred λacc (Bits/reverse/go a.pred #i{acc})
+  #o: λa.pred λacc (Bits/reverse/go a.pred #o{acc})
+}

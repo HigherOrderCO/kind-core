@@ -1,0 +1,14 @@
+// Gets the right subtree of a node.
+// - A: The type of values in the tree.
+// - tree: The tree to get the right subtree from.
+// = The right subtree if the tree is a node, or the tree itself if it's a leaf.
+Tree/right
+: ∀(A: *)
+  ∀(tree: (Tree A))
+  (Tree A)
+= λA λ{
+    #node: λleft λright 
+			right
+    #leaf: λvalue 
+			(Tree/leaf A value)
+  }

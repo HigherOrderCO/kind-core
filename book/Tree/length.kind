@@ -1,0 +1,14 @@
+// Calculates the number of nodes in a binary tree.
+// - A: The type of values stored in the tree.
+// - tree: The input tree.
+// = The number of nodes in the tree.
+Tree/length
+: ∀(A: *)
+  ∀(tree: (Tree A))
+  U32
+= λA λ{
+  #leaf: λvalue
+    1
+  #node: λleft λright
+    (+ (Tree/length A left) (Tree/length A right))
+}

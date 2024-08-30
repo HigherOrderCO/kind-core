@@ -1,0 +1,10 @@
+// Returns the max element (x, y) of a vector.
+// - a: The vector.
+// = The maximum element of the vector.
+V2/max
+: ∀(v: V2)
+  U32
+= λ{
+  #new: λv.x λv.y
+    (U32/max v.x v.y)
+}

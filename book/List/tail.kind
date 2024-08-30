@@ -1,0 +1,12 @@
+// Returns a new list containing all elements except the first one.
+// - A: The type of elements in the list.
+// - xs: The input list.
+// = A new list without the first element, or an empty list if the input was empty.
+List/tail
+: ∀(A: *)
+  ∀(xs: (List A))
+  (List A)
+= λA λ{
+  #nil: (List/nil A)
+  #con: λhead λtail tail
+}

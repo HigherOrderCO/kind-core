@@ -1,0 +1,7 @@
+// Auxiliary function for Bits/to_nat
+Bits/to_nat/go : ∀(a: Bits) ∀(acc: Nat) Nat
+= λ{
+  #e: λacc acc
+  #i: λa.pred λacc (Bits/to_nat/go a.pred (Nat/mul #s{#s{acc}} #s{#s{#z{}}}))
+  #o: λa.pred λacc (Bits/to_nat/go a.pred (Nat/add (Nat/mul #s{#s{acc}} #s{#s{#z{}}}) #s{#z{}}))
+}

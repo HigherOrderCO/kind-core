@@ -1,0 +1,12 @@
+// Defines a Map tree datatype
+// - A: The type of values stored in the tree
+// Constructors:
+// - node: Creates a tree node with a value and left and right subtrees
+// - leaf: Represents an empty tree or a leaf node
+Map
+: ∀(A: *)
+  *
+= λA #[]{
+  #node{ value: A left: (Map A) right: (Map A) } : (Map A)
+  #leaf{} : (Map A)
+}

@@ -1,0 +1,10 @@
+// Lifts a value into the Maybe context
+// - A: The type of the value
+// - value: The value to lift into Maybe
+// = A Maybe value containing the given value
+Maybe/pure
+: ∀(A: *)
+  ∀(value: A)
+  (Maybe A)
+= λA λvalue
+  (Maybe/some A value)

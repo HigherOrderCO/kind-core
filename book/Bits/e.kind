@@ -1,0 +1,4 @@
+// Represents an empty Bits sequence
+Bits/e
+: Bits
+= #e{}

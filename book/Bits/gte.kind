@@ -1,0 +1,25 @@
+// Checks if the first Bits sequence is greater than or equal to the second.
+// - a: The first Bits sequence.
+// - b: The second Bits sequence.
+// = True if 'a' is greater than or equal to 'b', False otherwise.
+Bits/gte
+: ∀(a: Bits)
+  ∀(b: Bits)
+  Bool
+= λ{
+  #e: λ{
+    #e: #t{}
+    #i: λb.pred #f{}
+    #o: λb.pred #f{}
+  }
+  #i: λa.pred λ{
+    #e: #t{}
+    #i: λb.pred (Bits/gte a.pred b.pred)
+    #o: λb.pred #f{}
+  }
+  #o: λa.pred λ{
+    #e: #t{}
+    #i: λb.pred #t{}
+    #o: λb.pred (Bits/gte a.pred b.pred)
+  }
+}

@@ -1,0 +1,8 @@
+// Creates a leaf node (empty map)
+// - A: The type of values stored in the map
+// = An empty map (leaf node)
+Map/leaf
+: ∀(A: *)
+  (Map A)
+= λA
+  #leaf{}
